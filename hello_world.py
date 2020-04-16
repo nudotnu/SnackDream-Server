@@ -6,4 +6,4 @@ def hello_world():
     return '<h1>Hello World!</h1>'
 
 if __name__ == '__main__':
-    app.run()
+    app.run('0.0.0.0', port=5000, threaded=True) 
