@@ -7,28 +7,29 @@ app = Flask(__name__)
 def helloWorld():
     return "<h1>Hello! Welcome!!</h1>"
 
-@app.route('/snack/response', methods=['GET', 'POST'])
-def snack():
+@app.route('/led', methods=['GET', 'POST'])
+def lights():
     # api를 가져와야하는 것 : 열량
     # 데이터 교환해야하는 것 : 랜덤 간식
-    number = req.body.action.parameters['num'].value #1,2,랜덤
+    light = req.body.action.parameters['LED'].value #1,2,랜덤
     
-    nugu = json_load()
-    # return nugu;
-    # print(nugu)
-    output = nugu.response.output
-    if(number == 3):
-        snacks = random.randrange(1,2)
+    return light;
+    # nugu = json_load()
+    # # return nugu;
+    # # print(nugu)
+    # output = nugu.response.output
+    # if(number == 3):
+    #     snacks = random.randrange(1,2)
     
-    if(number == 1):
-        snacks = "사탕"
-    elif(number == 2):
-        snacks = "초콜릿"
+    # if(number == 1):
+    #     snacks = "사탕"
+    # elif(number == 2):
+    #     snacks = "초콜릿"
     
-    output = { "prompt": snacks + " 간식 입니다." }
+    # output = { "prompt": snacks + " 간식 입니다." }
 
-    nugu.response.output = output
-    return res.json(nugu.response)
+    # nugu.response.output = output
+    # return res.json(nugu.response)
 
 @app.route('/config.json')
 def json_load():
