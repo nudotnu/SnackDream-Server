@@ -1,0 +1,43 @@
+{
+    "version": "2.0",
+    "action": {
+        "actionName": "cal",
+        "parameters": {
+            "calorie": {
+                "type": "calorie",
+                "value": "초콜릿"
+            }
+        }
+    },
+    "event": {
+        "type": {}
+    },
+    "context": {
+        "session": {
+            "accessToken": {}
+        },
+        "device": {
+            "type": {},
+            "state": {}
+        },
+        "supportedInterfaces": {
+            "AudioPlayer": {
+                "playerActivity": {},
+                "token": {},
+                "offsetInMilliseconds": {}
+            }
+        },
+        "privatePlay": {}
+    },
+    "resultCode": "OK",
+    "output": {},
+    "directives": [
+        {
+            "type": "AudioPlayer.Play",
+            "audioItem": {
+                "stream": {},
+                "metadata": {}
+            }
+        }
+    ]
+}
