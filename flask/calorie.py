@@ -3,18 +3,25 @@ import json # import json module
 import random
 app = Flask(__name__)
 
-@app.route('/snack', methods=['GET', 'POST'])
+@app.route('/calorie', methods=['GET', 'POST'])
 def snacks():
     file_path = "config.json" 
     json_new = dict()
     json_data = {}
+
     with open(file_path, encoding='UTF-8') as json_file:
         json_data = json.load(json_file)
-        json_string = json_data["action"]["parameters"]["shortcut"]["value"]
-        print(json_string)
+        json_string = json_data["action"]["parameters"]["calorie"]["value"]
+    print(json_string)
+
+    if(json_string == "초콜릿"): 
+        food = "초콜릿은 100g당 약 550칼로리 입니다."
+    
+    elif (json_string == "사탕"):
+        food = "사탕은 3개당(14g) 52칼로리 입니다."
 
     json_new = {
-        "prompt": json_string
+        "prompt": food
     }
 
     json_data["output"] = json_new
