@@ -12,7 +12,8 @@ def snacks():
     with open(file_path, encoding='UTF-8') as json_file: 
         json_data = json.load(json_file)
         json_string = json_data["action"]["parameters"]["calorie"]["value"]
-    // 파일 경로에 있는 json_file이라는 이름을 가진 파일 로드해오고 json_string이라는 변수에 json_file의 action 안에 ... value 값 가져옴    
+    // 파일 경로에 있는 json_file이라는 이름을 가진 파일 로드해오고 
+    // json_string이라는 변수에 json_file의 action 안에 ... value 값 가져옴    
     
     print(json_string)
 
